@@ -51,9 +51,12 @@ $(document).ready(function () {
       pickupTime7 :{
         fun7 : true
       },
-      nextday:{
+      checkbox_1:{
         required:true
         // nextday_val:true
+      },
+      sunday:{
+        required:true,
       }
     },
     messages: {
@@ -99,6 +102,10 @@ $(document).ready(function () {
       pickupTime7:{
         required:"this filed requried"
       },
+      checkbox_1:{
+        required:"please fill this filed"
+      }
+      
       
      
     },
@@ -106,10 +113,15 @@ $(document).ready(function () {
       if (element.is(":radio")) {
         error.insertAfter("#other");
       }
+      else if(element.is(":checkbox")){
+         error.insertAfter("#nextday");
+      }
+      
       else { // This is the default behavior of the script for all fields
         error.insertAfter(element);
       }
     },
+
     
 
   })
