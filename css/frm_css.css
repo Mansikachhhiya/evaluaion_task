@@ -85,21 +85,28 @@ td,th{
 td{
   border :1px solid;
 }
-label.error {
+/* label.error {
+  color: red;
+  font-size: 1rem;
+  margin-left: 15px;
+} */
+/* input.error,
+textarea.error {
+  
+  font-weight: 300;
+  color: red;
+} */
+#pickupTime1-error,#pickupTime2-error,#pickupTime3-error,#pickupTime4-error,#pickupTime5-error,#pickupTime6-error,#pickupTime7-error{
   color: red;
   font-size: 1rem;
   /* / display: block; / */
   margin-left: 15px;
 }
-input.error,
-textarea.error {
-  /* border: 1px dashed red; */
-  font-weight: 300;
-  color: red;
-}
-#pickupTime1.error,#pickupTime2.error,#pickupTime3.error,#pickupTime4.error,#pickupTime5.error,#pickupTime6.error,#pickupTime7.error{
+/* select.error{
+  color: black;
+} */
+#name-error,#age-error,#email-error,#phoneno-error,#gender-error,#checkbox_1-error{
   color: red;
   font-size: 1rem;
-  /* / display: block; / */
   margin-left: 15px;
 }
