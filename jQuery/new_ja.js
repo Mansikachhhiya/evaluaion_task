@@ -4,7 +4,8 @@ $(document).ready(function () {
       name: {
         required: true,
         minlength: 3,
-        name_: true
+        name_: true,
+        maxlength:25
       },
       age: {
         required: true,
@@ -27,35 +28,38 @@ $(document).ready(function () {
       gender: {
         required: true
       },
-      pickupTime1: {
 
-        required: true
-      },
-      pickupTime2: {
-        required: true
-      },
-      pickupTime3: {
-        required: true
-      },
-      pickupTime4: {
-        required: true
-      },
-      pickupTime5: {
-        required: true
-      },
+      // day:{
 
-      pickupTime6: {
-        required: true
-      },
-      pickupTime7: {
-        required: true
-      },
+      // }
+      // pickupTime4: {
+      //   required: true
+      // },
+      // pickupTime5: {
+      //   required: true
+      // },
+
+      // pickupTime6: {
+      //   required: true
+      // },
+      // pickupTime7: {
+      //   required: true
+      // },
+      // sunday:{
+
+      //   required:true
+      // },
+      // monday:{
+      //   required:true
+      // },
       checkbox_1: {
-        required: true
-        // nextday_val:true
+        required: true,
+        // nextday_val:true,
+        // nextday_val2:true
+        
       },
       pickupTime1: {
-
+        
         fun1: true
       },
       pickupTime2: {
@@ -97,7 +101,7 @@ $(document).ready(function () {
 
   })
   $.validator.addMethod('name_', function (value) {
-    return /^[a-zA-Z ]*$/.test(value);
+    return /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/.test(value);
   }, 'Please enter a valid name');
   $.validator.addMethod('age_val', function (value) {
     return /^[0-9]*$/.test(value);
@@ -136,16 +140,29 @@ $(document).ready(function () {
     // event.preventDefault();
     return $('#saturday').val() == 'on' && $('#pickupTime7').val() != ' ';
   }, 'Please enter Pick up time');
-  $.validator.addMethod('nextday_val', function (value) {
-    // event.preventDefault();
-    if ($('#nextday').checked == true) {
-      return false;
-    }
-  });
+
+  // $.validator.addMethod('nextday_val', function (value) {
+  //   // event.preventDefault();
+  //   if ($('#nextday').checked == true && $('.day input[type=checkbox').checked!=true) {
+      
+  //   }
+  // },'plase select the day');
+  // $.validator.addMethod('nextday_val2', function (value) {
+  //   // event.preventDefault();
+  //   if ($('#nextday').checked !=true && $('.day input[type=checkbox').checked==true) {
+      
+  //   }
+  // });
+
+  // $.validator.addMethod("validation_on_day",function(){
+  //    if($('#sun2').val()==" "|| $('.mon1').val()==" "||$('.tue1').val()==" "||$('.wed1').val()==" "||$('.thur1').val()==" "||$('.fri1').val()==" " ||$('.sat1').val()==" "){
+  //      document.getElementById("p1").innerHTML="please select the "
+  //    }
+  //   },"please select one of the day show in below" );
   // for next day checkbox disable/enable
   $(document).on('click', '#nextday input[type=checkbox]', function (event) {
     if ($(this).is(':checked')) {
-      $('.day input[type=checkbox]').attr('disabled', false).prop('checked', false)
+      $('.day input[type=checkbox]').attr('disabled', false)
 
     }
     else {

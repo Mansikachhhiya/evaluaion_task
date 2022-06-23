@@ -23,7 +23,9 @@ body{
 
 .asterick::after{
   content: "*";
-  color: red
+  color: red;
+  /* margin-left: %; */
+  
 }
 .body_div{
   padding: 30px;
@@ -90,12 +92,12 @@ td{
   font-size: 1rem;
   margin-left: 15px;
 } */
-/* input.error,
+input.error,
 textarea.error {
   
   font-weight: 300;
   color: red;
-} */
+}
 #pickupTime1-error,#pickupTime2-error,#pickupTime3-error,#pickupTime4-error,#pickupTime5-error,#pickupTime6-error,#pickupTime7-error{
   color: red;
   font-size: 1rem;
