@@ -11,6 +11,10 @@ body{
   margin-bottom: 10px;
 
 }
+input{
+  padding: 1%;
+  margin: 0px;
+}
 .container{
   max-width: 60%;
   margin-left: auto;
@@ -111,4 +115,9 @@ textarea.error {
   color: red;
   font-size: 1rem;
   margin-left: 15px;
+}
+#phoneno::-webkit-outer-spin-button,
+#phoneno::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

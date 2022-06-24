@@ -101,7 +101,7 @@ $(document).ready(function () {
 
   })
   $.validator.addMethod('name_', function (value) {
-    return /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/.test(value);
+    return /^[a-zA-Z]+(\s{0,1}[a-zA-Z]\s{0,1})*$/.test(value);
   }, 'Please enter a valid name');
   $.validator.addMethod('age_val', function (value) {
     return /^[0-9]*$/.test(value);
@@ -210,6 +210,19 @@ $(document).ready(function () {
 })
 $("#form").submit(function (event) {
   event.preventDefault();
+  localStorage.clear();
+  
+if($('.day input[type=checkbox]').is(':checked')){
+  var flag = true;
+}
+else {
+  flag=false;
+}
+for (let i = 1; i < 8; i++) {
+  if ($('#pickupTime' + i).parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime' + i).val() ===' ') {
+ flag = false;
+}
+}
   let name = $('#name').val();
   let age = $('#age').val();
   let email = $("#email").val();
@@ -223,20 +236,18 @@ $("#form").submit(function (event) {
   let thur = $('.thur1').val();
   let fri = $('.fri1').val();
   let sat = $('.sat1').val();
+  
 
-  if ($('#name').valid() &&
+  
+
+    if ($('#name').valid() &&
     $('#age').valid() &&
     $("#email").valid() &&
-    $("#phoneno").valid() && sun != " " ||
-    mon != " " || tue != " " || wed != " " || thur != " " || fri != " " || sat != " "
-    && $("input[name='gender']:checked") != undefined) {
+    $("#phoneno").valid() && $("#checkbox_1").valid()
+    && $("input[name='gender']:checked") != undefined && flag) 
+    {
     // if the days checkbox is checked and the value of pickupTime is null then  flag will be set at false
-    var flag = true;
-    for (let i = 1; i < 8; i++) {
-      if ($('#pickupTime' + i).parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime' + i).val() == ' ') {
-        flag = false;
-      }
-    }
+       
     console.log($('#pickupTime1').parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime1').val() == " ");
     console.log($('#pickupTime2').parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime2').val() == " ");
     console.log($('#pickupTime3').parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime3').val() == " ");
@@ -245,7 +256,7 @@ $("#form").submit(function (event) {
     console.log($('#pickupTime6').parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime6').val() == " ");
     console.log($('#pickupTime7').parent().parent().children('.day').children().children().is(':checked') && $('#pickupTime7').val() == " ");
 
-    if (flag == true && $("input[name='checkbox_1']:checked") != undefined) {
+   
       console.log({ name, age, email, phoneno, gender })
 
       const data = {
@@ -269,7 +280,7 @@ $("#form").submit(function (event) {
       window.open("../html/Data.htm")
     }
 
-  }
+  
 
 })
 
