@@ -1,0 +1,123 @@
+body{
+  background-color: white;
+  
+}
+ .form-input{
+  box-sizing: border-box;
+
+  padding-left: 20px; 
+  padding-right: 20px;
+  text-align: left; 
+  margin-bottom: 10px;
+
+}
+input{
+  padding: 1%;
+  margin: 0px;
+}
+.container{
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: lightgrey; */
+  margin-top : 45px;
+
+  
+}
+
+.asterick::after{
+  content: "*";
+  color: red;
+  /* margin-left: %; */
+  
+}
+.body_div{
+  padding: 30px;
+  background-color: lightgray;
+  
+}
+.h_grp{
+  float: left;
+  width : 49%;
+}
+.grp{
+  margin-top : 50px;
+}
+.font{
+  font-size: large;
+  font-weight: bold;
+}
+
+.submit_class{
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 20px;
+  background-color:white;
+  float: right;
+  text-align: center;
+  margin: -50px 2px;
+  
+  
+}
+/* .checkbox{
+  font-weight:bold;
+  font-size: 20px;
+  font-weight: lighter;
+} */
+.text
+{
+  margin-left: 2%;
+  margin-top: -1%;
+}
+.form{
+  border-style: solid;
+}
+table{
+  table-layout: fixed;
+  width: 100%;
+  /* border: 1px solid; */
+}
+td,th{
+  /* border-style: solid; */
+  word-wrap: break-word;
+
+  border: 1px solid;
+  background-color:plum;
+
+}
+
+td{
+  border :1px solid;
+}
+/* label.error {
+  color: red;
+  font-size: 1rem;
+  margin-left: 15px;
+} */
+input.error,
+textarea.error {
+  
+  font-weight: 300;
+  color: red;
+}
+#pickupTime1-error,#pickupTime2-error,#pickupTime3-error,#pickupTime4-error,#pickupTime5-error,#pickupTime6-error,#pickupTime7-error{
+  color: red;
+  font-size: 1rem;
+  /* / display: block; / */
+  margin-left: 15px;
+}
+/* select.error{
+  color: black;
+} */
+#name-error,#age-error,#email-error,#phoneno-error,#gender-error,#checkbox_1-error{
+  color: red;
+  font-size: 1rem;
+  margin-left: 15px;
+}
+#phoneno::-webkit-outer-spin-button,
+#phoneno::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
